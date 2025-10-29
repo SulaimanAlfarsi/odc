@@ -254,22 +254,29 @@ const Navbar = () => {
                   </button>
                 </motion.div>
 
-                {/* Mobile Social Links */}
-                <motion.div variants={mobileItemVariants} className="flex items-center space-x-2 sm:space-x-4 px-3 py-2">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="p-1 sm:p-2 text-gray-600 hover:text-[#369182] transition-colors duration-200 hover:bg-[#369182]/10 rounded-full"
-                      title={social.name}
-                    >
-                      <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </motion.a>
-                  ))}
+                {/* Mobile Social Links Section */}
+                <motion.div variants={mobileItemVariants} className="border-t border-gray-200 pt-3 mt-2">
+                  <div className="px-3 pb-2">
+                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2 font-sans">
+                      Follow Us
+                    </h3>
+                  </div>
+                  <div className="px-3 space-y-1">
+                    {socialLinks.map((social, index) => (
+                      <motion.a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-700 hover:text-[#369182] hover:bg-[#369182]/10 rounded-md transition-colors duration-200 font-sans"
+                      >
+                        <social.icon className="w-5 h-5 flex-shrink-0" />
+                        <span>{social.name}</span>
+                      </motion.a>
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
